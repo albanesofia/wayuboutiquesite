@@ -1,0 +1,14 @@
+<h1>Bracelets en Perles</h1>
+<p class="subtitle">
+  Explorez notre collection artisanale de bracelets uniques et colorés.
+</p>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let bracelet of bracelets">
+    <img [src]="bracelet.image" alt="{{ bracelet.name }}" />
+    <h3>{{ bracelet.name }}</h3>
+    <p class="description">{{ bracelet.description }}</p>
+    <p class="price">{{ bracelet.price }} €</p>
+    <button (click)="addToCart(bracelet)">Ajouter au panier</button>
+  </div>
+</div>

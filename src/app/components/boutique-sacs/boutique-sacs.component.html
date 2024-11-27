@@ -1,0 +1,14 @@
+<h1>Sacs Wayuu</h1>
+<p class="subtitle">
+  Découvrez notre collection unique de sacs crochetés traditionnels.
+</p>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let sac of sacs">
+    <img [src]="sac.image" alt="{{ sac.name }}" />
+    <h3>{{ sac.name }}</h3>
+    <p class="description">{{ sac.description }}</p>
+    <p class="price">{{ sac.price }} €</p>
+    <button (click)="addToCart(sac)">Ajouter au panier</button>
+  </div>
+</div>

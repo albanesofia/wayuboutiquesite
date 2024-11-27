@@ -1,0 +1,194 @@
+/* Général */
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* En-tête */
+.site-header {
+  background-color: #ffe4b5; /* Pastel beige doux */
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .site-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.site-header .site-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.site-header .site-nav ul li {
+  margin: 0 10px;
+}
+
+.site-header .site-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.site-header .site-nav ul li a:hover {
+  background-color: #333;
+  color: #ffe4b5; /* Mêmes tons pastel */
+}
+
+/* Bannière principale */
+.hero-banner {
+  background: url("https://gypsy-you.fr/wp-content/uploads/2019/11/IMG_0908.jpg")
+    center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-banner .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-banner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  text-decoration: none;
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e64a19;
+}
+
+/* Présentation */
+.about-preview {
+  background-color: #fff5e1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-preview h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.about-preview p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Produits phares */
+.featured-products {
+  padding: 40px 20px;
+}
+
+.featured-products h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.details-button {
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.details-button:hover {
+  background-color: #0056b3;
+}
+
+/* Pied de page */
+.site-footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}

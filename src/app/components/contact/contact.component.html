@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+  <div>
+    <label for="name">Nom :</label>
+    <input id="name" type="text" ngModel name="name" required #name="ngModel" />
+    <div *ngIf="name.invalid && name.touched" class="error">
+      Le nom est requis.
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email :</label>
+    <input
+      id="email"
+      type="email"
+      ngModel
+      name="email"
+      required
+      #email="ngModel"
+    />
+    <div *ngIf="email.invalid && email.touched" class="error">
+      Veuillez entrer une adresse email valide.
+    </div>
+  </div>
+
+  <div>
+    <label for="message">Message :</label>
+    <textarea
+      id="message"
+      ngModel
+      name="message"
+      required
+      #message="ngModel"
+    ></textarea>
+    <div *ngIf="message.invalid && message.touched" class="error">
+      Le message est requis.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+</form>

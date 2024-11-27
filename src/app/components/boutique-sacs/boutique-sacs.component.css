@@ -1,0 +1,84 @@
+/* Styles de la page */
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  color: #444;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Grille des produits */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Carte produit */
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image produit */
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+/* Titre produit */
+.product-card h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Description */
+.product-card .description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Prix */
+.product-card .price {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+/* Bouton ajouter au panier */
+.product-card button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+}

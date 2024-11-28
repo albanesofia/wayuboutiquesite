@@ -213,7 +213,7 @@ body {
 
 /* Boutons */
 .cta-button {
-  text-decoration: none;
+  /* text-decoration: none; */
   background-color: #ff5722;
   color: white;
   padding: 10px 20px;

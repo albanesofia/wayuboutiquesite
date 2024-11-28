@@ -25,18 +25,25 @@
 }
 
 .site-nav ul li a {
+  text-decoration: none; /* Retire le soulignement */
   cursor: pointer;
   pointer-events: auto;
 }
 
+.site-nav ul li a:link {
+  color: #6c4b3f; /* Couleur par défaut */
+}
+
+.site-nav ul li a:visited {
+  color: #6c4b3f; /* Même couleur que le lien non visité */
+}
+
 .site-nav ul li a:hover {
-  background-color: #333;
-  color: #ffe4b5;
-  border-radius: 5px;
+  color: #e17a45; /* Couleur au survol */
 }
 
 .site-nav ul li a.active {
-  color: #ff5722; /* Couleur d'accentuation */
   font-weight: bold;
+  color: #e17a45;
   text-decoration: underline;
 }

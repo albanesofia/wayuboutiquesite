@@ -7,10 +7,10 @@ export class ProductService {
   private sacs = [
     {
       id: 1,
-      name: 'Sac Wayuu multicolore',
-      description: 'Un sac artisanal avec des motifs traditionnels colorés.',
-      image:
-        'https://i.etsystatic.com/23065645/r/il/6ae51f/3688994406/il_1080xN.3688994406_fypt.jpg',
+      name: 'Sac Wayuu blanc',
+      description:
+        'Un sac artisanal avec des motifs traditionnels colorés blancs et bleus.',
+      image: 'assets/images/sac-blanc.jpg', // Chemin local
       price: 75,
     },
     {
@@ -18,14 +18,30 @@ export class ProductService {
       name: 'Sac Wayuu bleu',
       description:
         'Un sac élégant avec des nuances de bleu et des motifs géométriques.',
-      image: 'https://voglio.fr/1058-large_default/sac-mochila-wayuu-bleu.jpg',
+      image: 'assets/images/sac-bleu.webp',
       price: 80,
     },
     {
       id: 3,
-      name: 'Sac Wayuu jaune et orange',
+      name: 'Sac Wayuu jaune',
+      description:
+        'Un sac élégant avec des nuances de bleu et des motifs géométriques.',
+      image: 'assets/images/sac-jaune.webp',
+      price: 80,
+    },
+    {
+      id: 4,
+      name: 'Sac Wayuu rose',
+      description:
+        'Un sac élégant avec des nuances de bleu et des motifs géométriques.',
+      image: 'assets/images/sac-rose.jpeg',
+      price: 80,
+    },
+    {
+      id: 5,
+      name: 'Sac Wayuu rouge',
       description: 'Un sac vibrant avec des motifs inspirés du soleil.',
-      image: 'https://gypsy-you.fr/wp-content/uploads/2019/11/IMG_0898.jpg',
+      image: 'assets/images/sac-rouge.jpg',
       price: 90,
     },
   ];
@@ -35,23 +51,28 @@ export class ProductService {
       id: 1,
       name: 'Bracelet Perles Multicolores',
       description: 'Un bracelet vibrant avec des motifs traditionnels.',
-      image:
-        'https://i.etsystatic.com/17134460/r/il/60a044/2503359098/il_1080xN.2503359098_t8pm.jpg',
+      image: 'assets/images/bracelet-bleu.jpg',
       price: 25,
     },
     {
       id: 2,
+      name: 'Bracelet Perles Multicolores',
+      description: 'Un bracelet vibrant avec des motifs traditionnels.',
+      image: 'assets/images/bracelet-marron.avif',
+      price: 25,
+    },
+    {
+      id: 3,
       name: 'Bracelet Traditionnel',
       description: 'Un bracelet artisanal avec des détails géométriques.',
-      image:
-        'https://i.etsystatic.com/37141176/r/il/218751/5407600639/il_570xN.5407600639_f1ho.jpg',
+      image: 'assets/images/bracelet-orange.jpg',
       price: 30,
     },
     {
       id: 3,
-      name: 'Bracelet Tressé Rouge',
+      name: 'Bracelet Tressé Rose',
       description: 'Un bracelet chic et élégant avec des couleurs vives.',
-      image: 'https://i.ebayimg.com/images/g/eIcAAOSwnnVhGXBU/s-l400.jpg',
+      image: 'assets/images/bracelet-rose.jpg',
       price: 20,
     },
   ];

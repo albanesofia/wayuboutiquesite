@@ -3,8 +3,15 @@
     <h1 class="site-title">Artisanat Wayuu</h1>
     <nav class="site-nav">
       <ul>
-        <li><a routerLink="/" routerLinkActive="active">Accueil</a></li>
-        <li><a routerLink="/sac" routerLinkActive="active">Sacs</a></li>
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Accueil</a
+          >
+        </li>
+        <li><a routerLink="/sacs" routerLinkActive="active">Sacs</a></li>
         <li>
           <a routerLink="/bracelets" routerLinkActive="active">Bracelets</a>
         </li>

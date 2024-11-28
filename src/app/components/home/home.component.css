@@ -56,7 +56,7 @@ body {
 
 /* Bannière principale */
 .hero-banner {
-  background: url("/assets/images/sacs-plusieurs3.jpeg") center/cover no-repeat;
+  background: url("assets/images/sacs-plusieurs3.jpeg") center/cover no-repeat;
   height: 60vh;
   display: flex;
   align-items: center;
@@ -64,6 +64,8 @@ body {
   color: white;
   text-align: center;
   position: relative;
+  padding: 0 15px; /* Ajoute un padding latéral pour éviter les débordements */
+  box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
 }
 
 .hero-banner::after {
@@ -198,4 +200,48 @@ body {
   padding: 20px 0;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* Conteneur des boutons */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
+  justify-content: center; /* Centrer les boutons */
+  gap: 15px; /* Ajoute un espacement uniforme entre les boutons */
+  margin-top: 20px; /* Espacement au-dessus des boutons */
+}
+
+/* Boutons */
+.cta-button {
+  text-decoration: none;
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  display: block; /* Force les boutons à s'afficher en bloc */
+  max-width: 250px; /* Largeur maximale pour les petits écrans */
+  width: 100%; /* Les boutons prennent toute la largeur disponible */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #e64a19;
+  transform: scale(1.03); /* Petit effet d'agrandissement au survol */
+}
+
+/* Responsive pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column; /* Les boutons s'empilent verticalement */
+    align-items: center; /* Centre les boutons */
+  }
+
+  .cta-button {
+    width: calc(100% - 40px); /* Réduit la largeur pour laisser une marge */
+    max-width: 300px; /* Largeur maximale pour éviter d'être trop large */
+    padding: 12px 15px; /* Ajuste le padding pour mobile */
+  }
 }

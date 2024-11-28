@@ -1,0 +1,41 @@
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: #333;
+}
+
+/* Titre */
+.about-container h1 {
+  font-size: 2.5rem;
+  color: #6c4b3f;
+  margin-bottom: 1rem;
+}
+
+/* Texte */
+.about-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* Photos */
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.photos img {
+  width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+  transform: scale(1.05);
+}

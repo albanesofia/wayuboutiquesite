@@ -141,13 +141,13 @@ body {
 }
 
 .product-card {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
   text-align: center;
   padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
@@ -155,28 +155,36 @@ body {
 }
 
 .product-card img {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Les images occupent toute la largeur de la carte */
+  max-width: 300px; /* Limite la largeur maximale */
+  height: 200px; /* Hauteur fixe pour uniformiser */
+  object-fit: cover; /* Coupe ou étire légèrement l'image pour remplir le conteneur */
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
 .product-card h4 {
   font-size: 1.2rem;
-  margin-bottom: 5px;
+  color: #6c4b3f;
 }
 
 .product-card p {
-  font-size: 1rem;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #6c4b3f; /* Couleur du texte */
+  font-size: 1.1rem; /* Taille du texte */
+  font-weight: bold; /* Texte en gras */
+  margin-bottom: 15px;
 }
 
 .details-button {
-  text-decoration: none;
-  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
   background-color: #ffae00;
-  padding: 8px 15px;
+  border: none;
   border-radius: 5px;
-  transition: background 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .details-button:hover {

@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+/* Styles pour les écrans plus petits que 768px (tablettes et téléphones) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-banner {
+    height: 40vh; /* Réduit la hauteur pour les petits écrans */
+  }
+
+  .cta-button {
+    padding: 8px 16px; /* Réduit la taille des boutons */
+    font-size: 0.9rem;
+  }
+
+  .photos img {
+    width: 90%; /* Réduit la taille des images dans la section À propos */
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible */
+    gap: 20px;
+  }
+
+  .product-card {
+    padding: 10px; /* Réduit l'espacement des cartes produit */
+  }
+}

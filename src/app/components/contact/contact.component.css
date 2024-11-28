@@ -1,39 +1,112 @@
-form {
-  max-width: 600px;
+/* Conteneur principal */
+.contact-container {
+  max-width: 800px;
   margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: #333;
+}
+
+/* Titre */
+.contact-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: #444;
+}
+
+/* Texte de présentation */
+.contact-container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* Formulaire */
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-label {
-  font-weight: bold;
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-input,
-textarea {
+/* Champs de formulaire */
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #ffae00;
+  box-shadow: 0 4px 8px rgba(255, 174, 0, 0.3);
+  outline: none;
+}
+
+/* Labels */
+.contact-form label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Bouton d'envoi */
+.contact-form button {
+  padding: 12px 20px;
+  font-size: 1rem;
   color: white;
+  background-color: #ffae00;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: "Raleway", sans-serif;
 }
 
-button:hover {
-  background-color: #0056b3;
+.contact-form button:hover {
+  background-color: #ff8c00;
+  transform: scale(1.05);
 }
+
+.contact-form button:active {
+  transform: scale(0.95);
+}
+
+/* Espacement des groupes */
+.contact-form .form-group {
+  text-align: left;
+}
+
+/* Messages d'erreur */
 .error {
   color: red;
   font-size: 14px;
   margin-top: 5px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .contact-container {
+    padding: 10px;
+  }
+
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
 }

@@ -56,7 +56,7 @@ body {
 
 /* Bannière principale */
 .hero-banner {
-  background: url("assets/images/sacs-plusieurs3.jpeg") center/cover no-repeat;
+  background: url("/assets/images/sacs-plusieurs3.jpeg") center/cover no-repeat;
   height: 60vh;
   display: flex;
   align-items: center;
@@ -109,20 +109,68 @@ body {
 }
 
 /* Présentation */
-.about-preview {
-  background-color: #fff5e1;
+.about-us {
+  background-color: #fff5e1; /* Couleur pastel douce */
   padding: 40px 20px;
+  font-family: "Raleway", sans-serif;
   text-align: center;
+  color: #333;
 }
 
-.about-preview h3 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+.about-us h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #444;
 }
 
-.about-preview p {
-  font-size: 1.2rem;
+.about-us p {
+  font-size: 1rem;
   line-height: 1.6;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.about-us strong {
+  color: #ff5722; /* Accentuation avec une couleur vive */
+}
+
+/* Images alignées */
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.photos img {
+  width: 45%; /* Réduction pour un alignement propre */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+  transform: scale(1.05); /* Zoom subtil au survol */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .photos {
+    flex-direction: column;
+  }
+
+  .photos img {
+    width: 80%; /* Ajustement pour les petits écrans */
+    margin: 0 auto;
+  }
+
+  .about-us p {
+    font-size: 0.9rem;
+  }
+
+  .about-us h2 {
+    font-size: 1.8rem;
+  }
 }
 
 /* Produits phares */

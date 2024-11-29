@@ -259,6 +259,11 @@ body {
   margin-top: 20px; /* Espacement au-dessus des boutons */
 }
 
+.cta-buttons button {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 /* Boutons */
 .cta-button {
   /* text-decoration: none; */

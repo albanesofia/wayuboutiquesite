@@ -259,7 +259,7 @@ body {
   margin-top: 20px; /* Espacement au-dessus des boutons */
 }
 
-.cta-buttons button {
+button {
   cursor: pointer;
   text-decoration: none;
 }
@@ -278,6 +278,12 @@ body {
   max-width: 250px; /* Largeur maximale pour les petits écrans */
   width: 100%; /* Les boutons prennent toute la largeur disponible */
   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button.active {
+  background-color: #e64a19; /* Couleur différente pour l'état actif */
+  font-weight: bold; /* Texte en gras pour indiquer l'état actif */
+  border: 2px solid #ff8c00; /* Ajoute une bordure pour plus de visibilité */
 }
 
 .cta-button:hover {

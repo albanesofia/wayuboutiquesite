@@ -7,8 +7,8 @@ import { AboutComponent } from './components/about/about.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Page d'accueil
-  { path: 'sacs', component: BoutiqueSacsComponent }, // Page des sacs
-  { path: 'bracelets', component: BoutiqueBraceletsComponent }, // Page des bracelets
+  { path: 'sacs', component: BoutiqueSacsComponent },
+  { path: 'bracelets', component: BoutiqueBraceletsComponent },
   { path: 'contact', component: ContactComponent }, // Page de contact
   { path: 'about', component: AboutComponent }, // Page à propos
   { path: '**', redirectTo: '', pathMatch: 'full' }, // Redirection en cas de route invalide

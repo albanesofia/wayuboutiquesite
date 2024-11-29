@@ -1,6 +1,47 @@
+/* Animation pour l'introduction des éléments */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Appliquer les animations */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 1s ease-in-out;
+}
+
+.zoom-in {
+  animation: zoomIn 0.5s ease-in-out;
+}
+
 /* Général */
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Merriweather", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,7 +63,7 @@ body {
 }
 
 .site-header .site-title {
-  text-align: center;
+  text-align: left;
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -38,6 +79,7 @@ body {
 }
 
 .site-header .site-nav ul li {
+  font-family: "Merriweather", serif;
   margin: 0 10px;
 }
 
@@ -62,7 +104,7 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
-  text-align: center;
+  text-align: left;
   position: relative;
   padding: 0 15px; /* Ajoute un padding latéral pour éviter les débordements */
   box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
@@ -98,6 +140,7 @@ body {
   text-decoration: none;
   background-color: #ff5722;
   color: white;
+  border: none;
   padding: 10px 20px;
   border-radius: 5px;
   margin: 5px;
@@ -112,8 +155,8 @@ body {
 .about-us {
   background-color: #fff5e1; /* Couleur pastel douce */
   padding: 40px 20px;
-  font-family: "Raleway", sans-serif;
-  text-align: center;
+  font-family: "Merriweather", serif;
+  text-align: left; /* Alignement à gauche */
   color: #333;
 }
 
@@ -179,7 +222,7 @@ body {
 }
 
 .featured-products h3 {
-  text-align: center;
+  text-align: left;
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -191,7 +234,7 @@ body {
 }
 
 .product-card {
-  text-align: center;
+  text-align: left;
   padding: 15px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -246,7 +289,7 @@ body {
   background-color: #333;
   color: white;
   padding: 20px 0;
-  text-align: center;
+  text-align: left;
   font-size: 0.9rem;
 }
 
@@ -273,7 +316,7 @@ button {
   border-radius: 5px;
   font-size: 1rem;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   display: block; /* Force les boutons à s'afficher en bloc */
   max-width: 250px; /* Largeur maximale pour les petits écrans */
   width: 100%; /* Les boutons prennent toute la largeur disponible */

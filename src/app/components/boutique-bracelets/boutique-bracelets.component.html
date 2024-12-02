@@ -1,14 +1,67 @@
-<h1>Bracelets en Perles</h1>
+<h1>Bracelets Wayuu</h1>
 <p class="subtitle">
-  Explorez notre collection artisanale de bracelets uniques et colorés.
+  Découvrez notre collection unique de bracelets faits à la main.
 </p>
 
 <div class="product-grid">
   <div class="product-card" *ngFor="let bracelet of bracelets">
-    <img [src]="bracelet.image" alt="{{ bracelet.name }}" />
-    <h3>{{ bracelet.name }}</h3>
-    <p class="description">{{ bracelet.description }}</p>
-    <p class="price">{{ bracelet.price }} €</p>
-    <button (click)="addToCart(bracelet)">Ajouter au panier</button>
+    <img [src]="bracelet.image" [alt]="bracelet.name" class="product-image" />
+    <h3 class="product-title">{{ bracelet.name }}</h3>
+    <p class="product-description">{{ bracelet.description }}</p>
+    <p class="product-price">{{ bracelet.price }} €</p>
+    <div class="button-group">
+      <button class="add-to-cart-btn" (click)="addToCart(bracelet)">
+        Ajouter au panier
+      </button>
+      <button class="rate-product-btn" (click)="openRatingPopup(bracelet)">
+        Noter !
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Popup -->
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <h3>Noter : {{ selectedProduct?.name }}</h3>
+    <form (ngSubmit)="submitRating()">
+      <label for="username">Nom ou Pseudo :</label>
+      <input
+        id="username"
+        type="text"
+        [(ngModel)]="newRating.username"
+        name="username"
+        placeholder="Entrez votre nom ou pseudo"
+      />
+      <label>Note :</label>
+      <div class="star-rating">
+        <span
+          *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+          [class.filled]="i < hoverRatingValue || i < newRating.rating"
+          (click)="setRating(i + 1)"
+          (mouseover)="hoverRating(i + 1)"
+          (mouseleave)="hoverRating(0)"
+        >
+          ★
+        </span>
+      </div>
+
+      <label for="comment">Commentaire :</label>
+      <textarea
+        id="comment"
+        [(ngModel)]="newRating.comment"
+        name="comment"
+        rows="3"
+        placeholder="Votre commentaire..."
+        required
+      ></textarea>
+
+      <div class="popup-buttons">
+        <button type="submit" class="submit-btn">Envoyer</button>
+        <button type="button" class="cancel-btn" (click)="closePopup()">
+          Annuler
+        </button>
+      </div>
+    </form>
   </div>
 </div>

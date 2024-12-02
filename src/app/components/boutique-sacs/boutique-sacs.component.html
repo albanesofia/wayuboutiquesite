@@ -3,14 +3,62 @@
   Découvrez notre collection unique de sacs crochetés traditionnels.
 </p>
 
-<section class="product-grid">
-  <article class="product-card" *ngFor="let sac of sacs">
+<div class="product-grid">
+  <div class="product-card" *ngFor="let sac of sacs">
     <img [src]="sac.image" [alt]="sac.name" class="product-image" />
     <h3 class="product-title">{{ sac.name }}</h3>
     <p class="product-description">{{ sac.description }}</p>
     <p class="product-price">{{ sac.price }} €</p>
-    <button class="add-to-cart-btn" (click)="addToCart(sac)">
-      Ajouter au panier
-    </button>
-  </article>
-</section>
+    <div class="button-group">
+      <button class="add-to-cart-btn" (click)="addToCart(sac)">
+        Ajouter au panier
+      </button>
+      <button class="rate-product-btn" (click)="openRatingPopup(sac)">
+        Noter !
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Popup -->
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <h3>Noter : {{ selectedProduct?.name }}</h3>
+    <form (ngSubmit)="submitRating()">
+      <label for="username">Nom ou Pseudo :</label>
+      <input
+        id="username"
+        type="text"
+        [(ngModel)]="newRating.username"
+        name="username"
+        placeholder="Entrez votre nom ou pseudo"
+      />
+
+      <label>Note :</label>
+      <div class="star-rating">
+        <span
+          *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+          [class.filled]="i < hoverRatingValue || i < newRating.rating"
+          (click)="setRating(i + 1)"
+          (mouseover)="hoverRating(i + 1)"
+          (mouseleave)="hoverRating(0)"
+        >
+          ★
+        </span>
+      </div>
+
+      <label for="comment">Commentaire :</label>
+      <textarea
+        id="comment"
+        [(ngModel)]="newRating.comment"
+        name="comment"
+        rows="3"
+        placeholder="Votre commentaire..."
+        required
+      ></textarea>
+
+      <button type="submit">Envoyer</button>
+      <button type="button" (click)="closePopup()">Annuler</button>
+    </form>
+  </div>
+</div>

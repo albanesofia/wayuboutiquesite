@@ -76,18 +76,240 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* Bouton ajouter au panier */
-.product-card button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #fff;
+/* Style du bouton "Ajouter au panier" */
+.add-to-cart-btn {
+  margin-top: 10px;
+  margin-right: 15px; /* Ajoute un espacement à droite */
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  color: white;
   background-color: #ffae00;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ff8c00;
+}
+
+/* Style du bouton "Noter !" */
+.rate-product-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #e243f7; /* Bleu pour noter */
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.product-card button:hover {
-  background-color: #ff8c00;
+.rate-product-btn:hover {
+  background-color: #b3008f; /* Bleu plus foncé au survol */
+}
+
+/* Groupement des boutons */
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Espacement uniforme entre les boutons */
+  gap: 10px; /* Espacement interne entre les boutons */
+  margin-top: 10px;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Couleur plus sombre pour mettre en avant le contenu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-content {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f9f9f9
+  ); /* Dégradé subtil pour un effet moderne */
+  padding: 25px;
+  border-radius: 20px; /* Bordures plus arrondies */
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  position: relative; /* Pour positionner des éléments à l'intérieur */
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #34495e;
+  font-family: "Merriweather", serif;
+}
+
+.popup-content label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 8px;
+  color: #34495e;
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+}
+
+.popup-content input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f8f9fa; /* Fond clair */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre intérieure */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popup-content input[type="text"]:focus {
+  border-color: #3498db; /* Accentuation au focus */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Lueur bleue */
+  outline: none;
+}
+
+.popup-content input[type="text"]::placeholder {
+  color: #aaa; /* Couleur douce pour le placeholder */
+  font-style: italic;
+}
+
+.popup-content input[type="text"]:hover {
+  background-color: #eef2f7; /* Légère surbrillance au survol */
+}
+
+.popup-content select,
+.popup-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f8f9fa; /* Couleur de fond douce */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Effet d'incrustation */
+  transition: border-color 0.3s ease;
+}
+
+.popup-content select:focus,
+.popup-content textarea:focus {
+  border-color: #3498db; /* Couleur d'accentuation */
+  outline: none;
+}
+
+/* Conteneur pour les étoiles */
+.star-rating {
+  display: flex;
+  justify-content: center; /* Centre les étoiles */
+  gap: 5px; /* Espacement entre les étoiles */
+  font-size: 2rem; /* Taille des étoiles */
+  cursor: pointer;
+  user-select: none; /* Empêche la sélection de texte lors du clic */
+}
+
+/* Étoile de base */
+.star-rating span {
+  color: #ccc; /* Couleur par défaut des étoiles (gris clair) */
+  transition: color 0.3s; /* Transition fluide pour la coloration */
+}
+
+/* Étoiles remplies (note ou survol) */
+.star-rating span.filled {
+  color: #ffc107; /* Couleur des étoiles sélectionnées (jaune) */
+}
+
+/* Survol d'étoile */
+.star-rating span:hover ~ span {
+  color: #ccc !important; /* Assure que seules les étoiles à gauche sont colorées */
+}
+
+.popup-content button {
+  padding: 12px 20px;
+  margin: 10px 5px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popup-content button[type="submit"] {
+  background-color: #27ae60; /* Vert moderne */
+  color: white;
+}
+
+.popup-content button[type="submit"]:hover {
+  background-color: #229954;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content button[type="button"] {
+  background-color: #bdc3c7; /* Gris neutre */
+  color: white;
+}
+
+.popup-content button[type="button"]:hover {
+  background-color: #95a5a6;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icône de fermeture */
+.popup-content .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #34495e;
+  transition: color 0.3s ease;
+}
+
+.popup-content .close-btn:hover {
+  color: #e74c3c;
+}
+
+@media screen and (max-width: 768px) {
+  .popup-content {
+    width: 90%; /* Réduit la largeur pour mobile */
+    padding: 20px;
+  }
+
+  popup-content h3 {
+    font-size: 1.5rem;
+  }
+
+  popup-content textarea {
+    font-size: 0.9rem;
+  }
 }

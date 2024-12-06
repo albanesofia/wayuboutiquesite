@@ -137,18 +137,40 @@ body {
 }
 
 .cta-button {
+  display: flex; /* Active le modèle de boîte flexible */
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Centre le contenu verticalement */
+  height: 50px; /* Hauteur fixe du bouton (modifiable) */
+  text-align: center; /* Aligne le texte au centre si nécessaire */
   text-decoration: none;
   background-color: #ff5722;
   color: white;
   border: none;
+  transition: background 0.3s;
+  /* transition: background-color 0.3s ease, transform 0.2s ease; */
+
   padding: 10px 20px;
   border-radius: 5px;
-  margin: 5px;
-  transition: background 0.3s;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .cta-button:hover {
   background-color: #e64a19;
+}
+
+/* Conteneur des boutons */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
+  justify-content: center; /* Centrer les boutons */
+  gap: 15px; /* Ajoute un espacement uniforme entre les boutons */
+  margin-top: 20px; /* Espacement au-dessus des boutons */
+}
+
+button {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /* Présentation */
@@ -291,47 +313,6 @@ body {
   padding: 20px 0;
   text-align: left;
   font-size: 0.9rem;
-}
-
-/* Conteneur des boutons */
-.cta-buttons {
-  display: flex;
-  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
-  justify-content: center; /* Centrer les boutons */
-  gap: 15px; /* Ajoute un espacement uniforme entre les boutons */
-  margin-top: 20px; /* Espacement au-dessus des boutons */
-}
-
-button {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* Boutons */
-.cta-button {
-  /* text-decoration: none; */
-  background-color: #ff5722;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: left;
-  display: block; /* Force les boutons à s'afficher en bloc */
-  max-width: 250px; /* Largeur maximale pour les petits écrans */
-  width: 100%; /* Les boutons prennent toute la largeur disponible */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cta-button.active {
-  background-color: #e64a19; /* Couleur différente pour l'état actif */
-  font-weight: bold; /* Texte en gras pour indiquer l'état actif */
-  border: 2px solid #ff8c00; /* Ajoute une bordure pour plus de visibilité */
-}
-
-.cta-button:hover {
-  background-color: #e64a19;
-  transform: scale(1.03); /* Petit effet d'agrandissement au survol */
 }
 
 /* Responsive pour les écrans mobiles */
